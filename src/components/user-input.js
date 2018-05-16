@@ -9,8 +9,10 @@ export default class  UserInput extends React.Component {
 	processForm(event) {
 		event.preventDefault();
 		const value = this.input.value;
-		if(value)
+		if(value){
+			console.log('In UserInput',value);
 			this.props.callback(value);
+		}
 		this.input.value = '';
 	}
 
@@ -19,7 +21,6 @@ export default class  UserInput extends React.Component {
 		const divStyle = {
 			border: '1px solid black',
 		};
-
 
 		return (
 			<form onSubmit={(e) =>  this.processForm(e)}>
